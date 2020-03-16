@@ -90,7 +90,7 @@ var replaceUrls = (text) => {
 }
 
 Typer.speed = 3;
-Typer.file = "index.txt";
+Typer.file = "typertext.html";
 Typer.init();
 
 var timer = setInterval("t();", 30);

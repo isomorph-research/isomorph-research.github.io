@@ -1,5 +1,5 @@
 body {
-	background-color: #EEE
+	background-color: #ccc
 }
 
 #console {
@@ -18,15 +18,15 @@ a {
 }
 
 #a {
-	color: #0f0;
+	color: #369;
 }
 
 #c {
-	color: #0bc;
+	color: #369;
 }
 
 #b {
-	color: #ff0096;
+	color: #da2f46;
 }
 
 #k {
@@ -34,11 +34,11 @@ a {
 }
 
 #op {
-	color: #888
+	color: #222
 }
 
 @keyframes change {
 	0%  { color: #000; }
 	50% { color: #000; }
-	99% { color: #eee; }
+	99% { color: #ccc; }
 }
