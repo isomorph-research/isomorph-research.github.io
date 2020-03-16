@@ -1,10 +1,10 @@
 body {
-	background-color: #f4f4f4
+	background-color: #ffffff
 }
 
 #console {
 	font-family: 'Nixie One', monospace;
-	color: #424242;
+	color: #333333;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -13,20 +13,11 @@ body {
 }
 
 a {
-	color: #6d6d6d;
+	color: #1b1b1b;
 	text-decoration: none;
 }
 
 #prompt {
 	color: #1b1b1b;
+	font-weight: bold;
 }
-
-/* #k {
-	animation: change 1s;
-}
-
-@keyframes change {
-	0%  { color: #000; }
-	50% { color: #000; }
-	99% { color: #ccc; }
-} */
