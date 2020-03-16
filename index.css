@@ -1,0 +1,44 @@
+body {
+	background-color: #EEE
+}
+
+#console {
+	font-family: JetBrainsMono, monospace;
+	color: #333;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
+	font-size: 16px;
+}
+
+a {
+	color: #0bc;
+	text-decoration: none;
+}
+
+#a {
+	color: #0f0;
+}
+
+#c {
+	color: #0bc;
+}
+
+#b {
+	color: #ff0096;
+}
+
+#k {
+	animation: change 1s;
+}
+
+#op {
+	color: #888
+}
+
+@keyframes change {
+	0%  { color: #000; }
+	50% { color: #000; }
+	99% { color: #eee; }
+}
