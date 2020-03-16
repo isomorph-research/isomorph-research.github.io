@@ -1,10 +1,10 @@
 body {
-	background-color: #ccc
+	background-color: #f4f4f4
 }
 
 #console {
 	font-family: 'Nixie One', monospace;
-	color: #333;
+	color: #424242;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -13,32 +13,20 @@ body {
 }
 
 a {
-	color: #0bc;
+	color: #6d6d6d;
 	text-decoration: none;
 }
 
-#a {
-	color: #369;
+#prompt {
+	color: #1b1b1b;
 }
 
-#c {
-	color: #369;
-}
-
-#b {
-	color: #da2f46;
-}
-
-#k {
+/* #k {
 	animation: change 1s;
-}
-
-#op {
-	color: #222
 }
 
 @keyframes change {
 	0%  { color: #000; }
 	50% { color: #000; }
 	99% { color: #ccc; }
-}
+} */
