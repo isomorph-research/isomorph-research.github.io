@@ -1,14 +1,14 @@
-var Typer={
+var Typer = {
     text: null,
-    accessCountimer:null,
+    accessCountimer: null,
     index: 0,
     speed: 2,
     file: "",
     accessCount: 0,
     deniedCount: 0,
     init: () => {
-        accessCountimer = setInterval(() => {Typer.updLstChr();}, 500);
-        $.get(Typer.file, () => {
+        accessCountimer = setInterval( () => { Typer.updLstChr(); }, 500);
+        $.get(Typer.file, (data) => {
             Typer.text = data;
             Typer.text = Typer.text.slice(0, Typer.text.length - 1);
         });
@@ -24,7 +24,8 @@ var Typer={
     },
 
     addText: (key) => {
-        if (key.keyCode == 118) {
+
+        if (key.keyCode == 18) {
             Typer.accessCount++;
 
             if (Typer.accessCount >= 3) {
@@ -36,6 +37,8 @@ var Typer={
             if (Typer.deniedCount >= 3) {
                 Typer.makeDenied();
             }
+        } else if (key.keyCode == 27) {
+            Typer.hidepop();
         } else if (Typer.text) {
             var cont = Typer.content();
             if (cont.substring(cont.length - 1, cont.length) == "|") {
@@ -44,31 +47,30 @@ var Typer={
 
             if (key.keyCode != 8) {
                 Typer.index += Typer.speed;
-            } else {
-                if (Typer.index > 0) {
-                    Typer.index -= Typer.speed;
-                }
-                var text = Typer.text.substring(0, Typer.index);
-                var rtn = new RegExp("\n", "g");
-
-                $("#console").html(text.replace(rtn, "<br/>"));
-                window.scrillBy(0, 50);
+            } else if (Typer.index > 0) {
+                Typer.index -= Typer.speed;
             }
+            var text = Typer.text.substring(0, Typer.index);
+            var rtn = new RegExp("\n", "g");
 
-            if (key.preventDefault && key.keyCode != 122) {
-                key.preventDefault()
-            };
+            $("#console").html(text.replace(rtn, "<br/>"));
+            window.scrollBy(0, 50);
+        }
 
-            if (key.keyCode != 122) {
-                key.returnValue = false;
-            }
+        if (key.preventDefault && key.keyCode != 122) {
+            key.preventDefault()
+        };
+
+        if (key.keyCode != 122) {
+            key.returnValue = false;
         }
     },
 
     updLstChr: () => {
         var cont = this.content();
+
         if (cont.substring(cont.length - 1, cont.length) == "|") {
-            $("console").html($("#console").html().substring(0, cont.length - 1));
+            $("#console").html($("#console").html().substring(0, cont.length - 1));
         } else {
             this.write("|");
         }
@@ -77,7 +79,7 @@ var Typer={
 
 var replaceUrls = (text) => {
     var http = text.indexOf("http://");
-    var space = text.indexOf(".me", http);
+    var space = text.indexOf(".me ", http);
 
     if (space != -1) {
         var url = text.slice(http, space - 1);
@@ -92,9 +94,9 @@ Typer.file = "index.txt";
 Typer.init();
 
 var timer = setInterval("t();", 30);
-
 var t = () => {
-    Typer.addText({"keyCode": 123748});
+    Typer.addText({ "keyCode": 123748 });
+
     if (Typer.index > Typer.text.length) {
         clearInterval(timer);
     }
